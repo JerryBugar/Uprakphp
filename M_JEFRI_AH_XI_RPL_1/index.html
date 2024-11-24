@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar PHP Dasar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Data Siswa</h1>
+
+<a href="tambahdata.php" class="btn btn-tambah">Tambah Data Mahasiswa</a>
+<br><br>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>No.</th>
+            <th>Aksi</th>
+            <th>Nis</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>Jenis Kelamin</th>
+            <th>Alamat</th>
+            <th>Foto</th>
+        </tr>
+                        <tr>
+            <td>1</td>
+            <td>
+                <div class="action-buttons">
+                    <a href="ubah.php?nis=23241011" class="btn btn-ubah" onclick="event.stopPropagation();">Ubah</a>
+                    <a href="hapus.php?nis=23241011" class="btn btn-hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                </div>
+            </td>
+            <td>23241011</td>
+            <td>Kufra</td>
+            <td>XI TKJ 2</td>
+            <td>Teknik Jaringan Komputer</td>
+            <td>L</td>
+            <td>Katapang 03 uhuya</td>
+            <td><img src="img/xl.jpg.jpg" width="50"></td>
+        </tr>
+                        <tr>
+            <td>2</td>
+            <td>
+                <div class="action-buttons">
+                    <a href="ubah.php?nis=23241012" class="btn btn-ubah" onclick="event.stopPropagation();">Ubah</a>
+                    <a href="hapus.php?nis=23241012" class="btn btn-hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                </div>
+            </td>
+            <td>23241012</td>
+            <td>Ken arok</td>
+            <td>XI RPL 2</td>
+            <td>Rekayasa Perangkat Lunak</td>
+            <td>L</td>
+            <td>Bandung</td>
+            <td><img src="img/pulsaceria-removebg-preview.png.png" width="50"></td>
+        </tr>
+                        <tr>
+            <td>3</td>
+            <td>
+                <div class="action-buttons">
+                    <a href="ubah.php?nis=23241018" class="btn btn-ubah" onclick="event.stopPropagation();">Ubah</a>
+                    <a href="hapus.php?nis=23241018" class="btn btn-hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                </div>
+            </td>
+            <td>23241018</td>
+            <td>Siska</td>
+            <td>XI RPL 1</td>
+            <td>Rekayasa Perangkat Lunak</td>
+            <td>P</td>
+            <td>Fransisco Cibaduyut</td>
+            <td><img src="img/673fff01adf23.png" width="50"></td>
+        </tr>
+                        <tr>
+            <td>4</td>
+            <td>
+                <div class="action-buttons">
+                    <a href="ubah.php?nis=28827373" class="btn btn-ubah" onclick="event.stopPropagation();">Ubah</a>
+                    <a href="hapus.php?nis=28827373" class="btn btn-hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                </div>
+            </td>
+            <td>28827373</td>
+            <td>Buakar</td>
+            <td>XI TKJ 2</td>
+            <td>Rekayasa Perangkat Lunak</td>
+            <td>P</td>
+            <td>Bojong soang</td>
+            <td><img src="img/Coca-Cola-logo-108E6559A3-seeklogo.com_1732418779.png" width="50"></td>
+        </tr>
+                        <tr>
+            <td>5</td>
+            <td>
+                <div class="action-buttons">
+                    <a href="ubah.php?nis=234567812" class="btn btn-ubah" onclick="event.stopPropagation();">Ubah</a>
+                    <a href="hapus.php?nis=234567812" class="btn btn-hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                </div>
+            </td>
+            <td>234567812</td>
+            <td>Siskae</td>
+            <td>XI TKJ !</td>
+            <td>Teknik Komputer Jaringan</td>
+            <td>P</td>
+            <td>Jakarta Laut barat</td>
+            <td><img src="img/6741f6a78efca.png" width="50"></td>
+        </tr>
+                    </table>
+
+</body>
+</html>
