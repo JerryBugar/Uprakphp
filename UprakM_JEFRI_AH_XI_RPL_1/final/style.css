@@ -1,0 +1,573 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2, #ffafbd, #ffc3a0);
+    min-height: 100vh; /* Pastikan body mengisi seluruh tinggi viewport */
+    padding: 0; /* Hapus padding jika tidak diperlukan */
+    margin: 0; /* Hapus margin untuk menghindari space di bawah */
+    transition: background 0.5s ease;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    background: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 0;
+    transition: all 0.3s ease;
+}
+
+/* Header tabel */
+th {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2575fc;
+}
+
+/* Cell tabel */
+td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Baris tabel */
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+tr:hover td {
+    background-color: #f1f1f1;
+    transform: scale(1.01);
+}
+
+/* Kolom pertama dan terakhir */
+th:first-child,
+td:first-child {
+    padding-left: 20px;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 20px;
+}
+
+/* Responsif untuk tabel */
+@media screen and (max-width: 768px) {
+    table {
+        border-radius: 6px;
+    }
+    
+    th, td {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    th:first-child,
+    td:first-child {
+        padding-left: 15px;
+    }
+
+    th:last-child,
+    td:last-child {
+        padding-right: 15px;
+    }
+}
+
+/* Styling untuk tombol */
+.btn {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    margin: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    background: linear-gradient(135deg, #4c86af, #357599);
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn:hover:before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.btn-tambah {
+    background: linear-gradient(135deg, #4c86af, #357599);
+}
+
+.btn-tambah[type="submit"] {
+    margin-left: 0px; /* Atur jarak dari kiri sesuai keinginan */
+    margin-top: 10px;
+    background: linear-gradient(135deg, #4c86af, #357599);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-ubah, .btn-hapus {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 80px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-ubah {
+    background-color: #2196F3;
+}
+
+.btn-hapus {
+    background-color: #f44336;
+}
+
+.btn-ubah:hover {
+    background-color: #1976D2;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+.btn-hapus:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+}
+
+.btn-kembali {
+    background: #607D8B;
+    display: inline-block;
+    padding: 12px 24px;
+    text-align: center;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Styling untuk form */
+form {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 15px 0;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f8f9fa;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #4c86af;
+    transform: scale(1.02);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(76,134,175,0.15);
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #4c86af, #357599);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Styling untuk gambar */
+img {
+    border-radius: 12px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(97%);
+    max-width: 100%;
+    height: auto;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(105%);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* Media Queries untuk Responsivitas */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+    }
+    
+    .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    form {
+        padding: 20px;
+        margin: 15px;
+    }
+    
+    input[type="text"],
+    select {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    form {
+        padding: 15px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+/* Media Queries untuk Desktop */
+@media screen and (min-width: 1024px) {
+    /* Peningkatan animasi tombol untuk desktop */
+    .btn {
+        position: relative;
+        overflow: hidden;
+        padding: 12px 28px;
+        margin: 8px 12px;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-ubah, .btn-hapus {
+        opacity: 0.9;
+        transform: translateX(0);
+    }
+
+    .btn-ubah:hover, .btn-hapus:hover {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.05);
+    }
+
+    /* Efek shine yang lebih halus */
+    .btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        transition: all 0.6s ease;
+    }
+
+    .btn:hover:before {
+        left: 100%;
+    }
+
+    /* Perbaikan bayangan saat hover */
+    .btn:hover {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Animasi khusus untuk tombol ubah */
+    .btn-ubah {
+        background: linear-gradient(135deg, #2196F3, #1976D2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-ubah:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            transparent 100%
+        );
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-ubah:hover {
+        background-position: right center;
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+    }
+
+    .btn-ubah:hover:before {
+        left: 100%;
+    }
+
+    /* Perbaikan animasi saat dalam tabel */
+    tr .btn-ubah {
+        opacity: 0.9;
+        transform: translateX(-10px);
+        transition: all 0.3s ease-out;
+    }
+
+    tr:hover .btn-ubah {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Efek active state */
+    .btn-ubah:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+    }
+
+    /* Animasi khusus untuk tombol hapus */
+    .btn-hapus {
+        background: linear-gradient(135deg, #f44336, #d32f2f);
+        background-size: 200% auto;
+        transition: all 0.5s ease;
+    }
+
+    .btn-hapus:hover {
+        background-position: right center;
+    }
+
+    /* Perbaikan animasi tabel untuk desktop */
+    tr:hover .btn-ubah {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+
+    tr:hover .btn-hapus {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Styling untuk input file/foto */
+input[type="file"] {
+    display: none; /* Sembunyikan input file default */
+}
+
+.custom-file-upload {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 30px; /* Sesuaikan padding */
+    background: linear-gradient(135deg, #4c86af, #357599);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Anda bisa menyesuaikan margin ini */
+    font-size: 14px; /* Sesuaikan ukuran font jika perlu */
+}
+
+.custom-file-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76,134,175,0.2);
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+}
+
+.file-name {
+    margin-left: 10px; /* Memberikan jarak antara tombol dan nama file */
+    font-size: 14px; /* Sesuaikan ukuran font jika perlu */
+    color: #333; /* Warna teks untuk nama file */
+}
+
+/* Styling untuk preview gambar */
+.image-preview {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+
+.image-preview p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.btn-ubah[type="submit"] {
+    margin-left: -5px; /* Atur jarak dari kiri sesuai keinginan */
+    margin-top: 20px;
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-ubah[type="submit"]:hover {
+    background: linear-gradient(135deg, #1976D2, #1565C0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-ubah[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Styling untuk tombol aksi dalam tabel */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.btn-ubah, .btn-hapus {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 80px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-ubah {
+    background-color: #2196F3;
+}
+
+.btn-hapus {
+    background-color: #f44336;
+}
+
+.btn-ubah:hover {
+    background-color: #1976D2;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+.btn-hapus:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .btn {
+        display: none; /* Pastikan ini tidak ada */
+    }
+}
