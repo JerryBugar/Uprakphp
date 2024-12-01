@@ -1,0 +1,468 @@
+/* Global styles */
+body {
+    background-image: url('img/ahaya.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Table styles */
+.table-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    background: transparent;
+}
+
+.custom-table > tbody > tr {
+    background-color: rgba(254, 180, 123, 0.2) !important;
+}
+
+.custom-table > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(255, 126, 95, 0.2) !important;
+}
+
+.custom-table > tbody > tr:hover {
+    background-color: rgba(255, 126, 95, 0.3) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table > tbody > tr > td {
+    background-color: transparent !important;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table thead th {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b) !important;
+    color: #333 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 15px !important;
+    vertical-align: middle;
+    border: none !important;
+}
+
+.table thead th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table thead th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.table tbody tr {
+    background: rgba(254, 180, 123, 0.1);
+    transition: all 0.3s ease;
+}
+
+.table tbody td {
+    padding: 15px !important;
+    vertical-align: middle;
+    border: none;
+    color: #444;
+    font-weight: 500;
+}
+
+.table tbody td:nth-child(2) {
+    font-weight: 600;
+    color: #ff7e5f;
+}
+
+.table tbody td:nth-child(3) {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.img-thumbnail {
+    max-width: 60px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(254, 180, 123, 0.3);
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.5);
+    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.2);
+    z-index: 1000;
+    position: relative;
+    border-color: #ff7e5f;
+}
+
+/* Form styles */
+.form-container {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    padding: 30px !important;
+}
+
+.form-container h2 {
+    color: #333;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-control, .form-select {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.form-label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Button styles */
+.btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Tambahkan style baru untuk button kembali */
+.btn-back {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-back:hover {
+    background-color: #2c3e50;
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style untuk input file yang lebih menarik */
+.file-upload {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 2px dashed #3498db;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+    background: #e8f4f8;
+    border-color: #2980b9;
+}
+
+.file-upload-label i {
+    font-size: 1.8rem;
+    color: #3498db;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.file-name {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Style untuk preview image yang lebih baik */
+.image-preview {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Button submit yang lebih menarik */
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    font-weight: normal;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Card styles */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 15px;
+}
+
+/* Form styles */
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    border-color: #3498db;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* File upload styles */
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 2px dashed #3498db;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+    background: #e8f4f8;
+    border-color: #2980b9;
+}
+
+.file-upload-label i {
+    font-size: 1.8rem;
+    color: #3498db;
+}
+
+/* Button styles */
+.btn-secondary {
+    background-color: #34495e;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.btn-secondary:hover {
+    background-color: #2c3e50;
+    transform: translateX(-5px);
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Pembaruan style tombol aksi */
+.btn-group .btn {
+    padding: 8px 12px;
+    margin: 0 2px;
+}
+
+.btn-group .btn-warning {
+    background-color: #f39c12;
+    border: none;
+    color: white;
+}
+
+.btn-group .btn-danger {
+    background-color: #e74c3c;
+    border: none;
+}
+
+.btn-group .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Gaya untuk badge */
+.badge {
+    font-size: 0.85em;
+    padding: 0.5em 0.8em;
+    font-weight: 500;
+}
+
+/* Gaya untuk ikon dalam tabel */
+.table th i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Animasi untuk baris tabel */
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: rgba(255, 126, 95, 0.15) !important;
+}
+
+/* Gaya untuk tombol aksi */
+.btn-group .btn {
+    margin: 0 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-group .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn-group .btn:hover::after {
+    width: 200%;
+    height: 200%;
+}
+
+/* Gaya untuk gambar thumbnail */
+.img-thumbnail {
+    border: 3px solid rgba(255, 126, 95, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.img-thumbnail:hover {
+    border-color: #ff7e5f;
+}
+
+/* Gaya untuk header tabel */
+.table thead th {
+    background: linear-gradient(45deg, #2c3e50, #3498db) !important;
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Gaya untuk sel tabel */
+.table td {
+    vertical-align: middle;
+    padding: 1rem !important;
+}
+
+/* Efek hover untuk badge */
+.badge {
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+/* Gaya untuk tooltip */
+.tooltip {
+    font-size: 0.8rem;
+}
+
+.tooltip .tooltip-inner {
+    background-color: #2c3e50;
+    padding: 8px 12px;
+}
+
+/* Tambahkan style untuk modal */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.detail-info table td {
+    padding: 0.5rem 0;
+}
+
+.detail-foto {
+    border: 3px solid #3498db;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
